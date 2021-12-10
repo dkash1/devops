@@ -99,3 +99,9 @@ options bonding mode=5 miimon=100 downdelay=200 updelay=200
 
 Windows - arp -a
 linux - ip n
+
+Очистить ARP кеш 
+ip neigh flush all
+
+Очистить ненужный ip
+arp -d 192.168.100.25
