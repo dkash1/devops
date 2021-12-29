@@ -1,6 +1,5 @@
 1. Узнайте о sparse (разряженных) файлах.
-Изучил.
-
+Сделано.
 ==============================================
 2. Могут ли файлы, являющиеся жесткой ссылкой на один объект, иметь разные права доступа и владельца? Почему?
 
@@ -19,7 +18,6 @@ total 4.0K
 526889 -rwxr-xr-x 2 vagrant vagrant  0 Nov 14 11:06 test_link
 vagrant@vagrant:~$ 
 ==============================================
-
 3. Сделайте vagrant destroy на имеющийся инстанс Ubuntu. Замените содержимое Vagrantfile следующим:
 
  Vagrant.configure("2") do |config|
@@ -47,9 +45,6 @@ sda                    8:0    0   64G  0 disk
 └─vgvagrant-swap_1 253:1    0  980M  0 lvm  [SWAP]
 sdb                    8:16   0  2.5G  0 disk
 sdc                    8:32   0  2.5G  0 disk
-
-
-
 
 ==============================================
 4. Используя fdisk, разбейте первый диск на 2 раздела: 2 Гб, оставшееся пространство.
@@ -168,8 +163,6 @@ Continue creating array? y
 mdadm: Defaulting to version 1.2 metadata
 mdadm: array /dev/md1 started.
 root@vagrant:~# 
-
-
 
 ==============================================
 7. Соберите mdadm RAID0 на второй паре маленьких разделов
@@ -290,8 +283,6 @@ Writing superblocks and filesystem accounting information: done
 root@vagrant:~# mkdir /tmp/new
 root@vagrant:~# mount /dev/vg1/lvol0 /tmp/new
 
-
-
 ==============================================
 13. Поместите туда тестовый файл, например wget https://mirror.yandex.ru/ubuntu/ls-lR.gz -O /tmp/new/test.gz.
 
@@ -349,7 +340,6 @@ root@vagrant:~# gzip -t /tmp/new/test.gz && echo $?
 
 ==============================================
 16. Используя pvmove, переместите содержимое PV с RAID0 на RAID1.
-
 
 root@vagrant:~# pvmove /dev/md0
 /dev/md0: Moved: 12.00%
