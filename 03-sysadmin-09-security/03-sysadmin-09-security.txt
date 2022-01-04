@@ -57,17 +57,17 @@ Welcome to Ubuntu 20.04.2 LTS (GNU/Linux 5.4.0-80-generic x86_64)
 * Management:     https://landscape.canonical.com
 * Support:        https://ubuntu.com/advantage
 
-System information as of Thu 09 Dec 2021 08:17:11 PM UTC
+System information as of Thu 04 Jan 2022 08:17:11 PM UTC
 
 System load:  0.0               Processes:             114
-Usage of /:   2.5% of 61.31GB   Users logged in:       0
-Memory usage: 23%               IPv4 address for eth0: 10.0.2.15
+Usage of /:   30.5% of 120.00GB   Users logged in:       0
+Memory usage: 42%               IPv4 address for eth0: 10.0.2.15
 Swap usage:   0%                IPv4 address for eth1: 172.28.128.10
 
 
 This system is built by the Bento project by Chef Software
 More information can be found at https://github.com/chef/bento
-Last login: Thu Dec  9 19:50:12 2021 from 10.0.2.1
+Last login: Tue Jan  04 08:20:12 2022 from 10.0.2.1
 vagrant@netology1:~$
 ==========================================================
 7. Соберите дамп трафика утилитой tcpdump в формате pcap, 100 пакетов. Откройте файл pcap в Wireshark.
