@@ -81,7 +81,7 @@ while True:
             logging.error(
                 f'{datetime.datetime.now()} {host} IP mistmatch: {srv[host]} -> {ip}')
             srv[host] = ip
-            print(f"запись в файл {data_check}")
+            print(f"Запись в файл {data_check}")
             if data_check == "json":
                 save_data_json(srv)
             else:
