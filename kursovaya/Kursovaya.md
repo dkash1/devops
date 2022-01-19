@@ -64,7 +64,7 @@ Anywhere                   ALLOW IN    127.0.0.1
 4. Cоздайте центр сертификации по инструкции ([ссылка](https://learn.hashicorp.com/tutorials/vault/pki-engine?in=vault/secrets-management)) и выпустите сертификат для использования его в настройке веб-сервера nginx (срок жизни сертификата - месяц).
 
 Решение:
-
+```
  vault operator init
     vault operator unseal
     vault secrets enable pki
@@ -78,6 +78,7 @@ Anywhere                   ALLOW IN    127.0.0.1
     vault write pki_int/intermediate/set-signed certificate=@intermediate.cert.pem
     vault write pki_int/roles/example-dot-com allowed_domains="test.dkash1.devops.ru" allow_subdomains=true max_ttl="720h"
     vault write pki_int/issue/example-dot-com common_name="test.dkash1.devops.ru" ttl="720h"
+```
  
 ![Screenshot](img/sert_install.jpg)
 
@@ -150,11 +151,7 @@ systemctl reload nginx
 ```
 10. Поместите скрипт в crontab, чтобы сертификат обновлялся какого-то числа каждого месяца в удобное для вас время.
 
-```bash
-crontab -l
-# 0 0 1 1-12 * sh /etc/cert_script/script_ngx.sh
-```
-Установим cron запуск скрипта раз в минуту 
+Установим cron на запуск скрипта раз в минуту 
 ```bash
 
 * * * * * sh /etc/cert_script/script_ngx.sh
