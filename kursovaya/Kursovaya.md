@@ -79,7 +79,10 @@ Anywhere                   ALLOW IN    127.0.0.1
     vault write pki_int/roles/example-dot-com allowed_domains="test.dkash1.devops.ru" allow_subdomains=true max_ttl="720h"
     vault write pki_int/issue/example-dot-com common_name="test.dkash1.devops.ru" ttl="720h"
 ```
- 
+5. Установите корневой сертификат созданного центра сертификации в доверенные в хостовой системе.
+
+Седалано:
+
 ![Screenshot](img/sert_install.jpg)
 
 6. Установите nginx.
