@@ -81,13 +81,13 @@ Anywhere                   ALLOW IN    127.0.0.1
 ```
 5. Установите корневой сертификат созданного центра сертификации в доверенные в хостовой системе.
 
-Седалано:
+Сертификат установлен:
 
 ![Screenshot](img/sert_install.jpg)
 
 6. Установите nginx.
 
-Установлен, ранее.
+Установлен.
 ```
 root@vagrant:/home/vagrant# apt -y install nginx
 Reading package lists... Done
