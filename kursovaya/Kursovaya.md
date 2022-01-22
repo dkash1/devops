@@ -140,7 +140,7 @@ server {
 #!/bin/bash
 vault login $login_vault # export login_vault=123123123
 
-vault write pki_int/issue/example-dot-com common_name="test.dozolin.devops.ru" ttl="720h" -format=json > /etc/cert_script/data.json
+vault write pki_int/issue/example-dot-com common_name="test.dkash1.devops.ru" ttl="720h" -format=json > /etc/cert_script/data.json
 
 if [[ -s /etc/cert_script/data.json ]]
 then 
