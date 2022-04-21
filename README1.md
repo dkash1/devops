@@ -40,8 +40,7 @@ ansible использует существующую ssh инфраструкт
 - Vagrant
 - Ansible
 ```
-[ScreenShot]scr1.jpg
-*Приложить вывод команд установленных версий каждой из программ, оформленный в markdown.*
+![Screenshot](img/scr1.jpg)
 ```
 ## Задача 4 (*)
 
