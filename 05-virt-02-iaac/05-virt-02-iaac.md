@@ -40,7 +40,7 @@ ansible использует существующую ssh инфраструкт
 - Vagrant
 - Ansible
 ```
-.![Screenshot](scr1.jpg)
+[Screenshot](img\scr1.jpg)
 ```
 ## Задача 4 (*)
 
