@@ -16,10 +16,11 @@
 ## Задача 1
 
 Сценарий выполения задачи:
-
+ 
 - создайте свой репозиторий на https://hub.docker.com;
 - выберете любой образ, который содержит веб-сервер Nginx;
 - создайте свой fork образа;
+
 - реализуйте функциональность:
 запуск веб-сервера в фоне с индекс-страницей, содержащей HTML-код ниже:
 ```
@@ -28,12 +29,37 @@
 Hey, Netology
 </head>
 <body>
-<h1>I’m DevOps Engineer!</h1>
+<h1>I m DevOps Engineer</h1>
 </body>
 </html>
 ```
 Опубликуйте созданный форк в своем репозитории и предоставьте ответ в виде ссылки на https://hub.docker.com/username_repo.
+## Решение
+```
+docker run -d -p 80:80 nginx //скачиваем образ и прокидываем порты в свою систему
+ps -a //смотрим список запущенных контейнеров
+docker exec -it 98b54986d3e0 bash //командой ps -a определили id и подключились в консоль
+вносим изменения в index.html:
+echo "<html>
+<head>
+Hey, Netology
+</head>
+<body>
+<h1>I m DevOps Engineer</h1>
+</body>
+</html>" > index.html 
+docker commit dkash-nginx dkash/dkash-nginx //Собираем образ из нашего контейнера, Собираем образ из нашего контейнера
+docker login
+docker push dkash/docker-nginx  //Заливаем наш образ на хаб
 
+ссылка https://hub.docker.com/r/dkash/docker-nginx
+
+//проверяем что образ скачивается и работает:
+docker pull dkash/docker-nginx
+docker images
+docker run -d -p 80:80 dkash/docker-nginx
+docker ps -a
+```
 ## Задача 2
 
 Посмотрите на сценарий ниже и ответьте на вопрос:
