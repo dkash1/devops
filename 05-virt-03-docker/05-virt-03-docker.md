@@ -68,26 +68,79 @@ docker ps -a
 Детально опишите и обоснуйте свой выбор.
 
 --
-
+## Решение
 Сценарий:
 
 - Высоконагруженное монолитное java веб-приложение;
+```
+Физическая машина, т.к. это монолит.
+```
 - Nodejs веб-приложение;
+```
+Контейнер, т.к. приложение можно и нужно масштабировать.
+```
 - Мобильное приложение c версиями для Android и iOS;
+```
+Контейнер, т.к. приложение можно и нужно масштабировать.
+```
 - Шина данных на базе Apache Kafka;
+```
+Физическая или виртуальная машина, т.к. требовательность к ресурсам.
+```
 - Elasticsearch кластер для реализации логирования продуктивного веб-приложения - три ноды elasticsearch, два logstash и две ноды kibana;
+```
+Контейнеры, т.к. приложение можно и нужно масштабировать.
+```
 - Мониторинг-стек на базе Prometheus и Grafana;
+```
+Контейнеры, т.к. возможно понадобится масштабирование.
+```
 - MongoDB, как основное хранилище данных для java-приложения;
+```
+Физическая или виртуальная машина, т.к. требовательность к ресурсам. 
+```
 - Gitlab сервер для реализации CI/CD процессов и приватный (закрытый) Docker Registry.
+```
+Виртуальная машина, т.к. не требуется постоянное масштабирование или деплой новой, удобно делать снэпшоты и бэкапы.
+```
 
 ## Задача 3
 
+## Решение
 - Запустите первый контейнер из образа ***centos*** c любым тэгом в фоновом режиме, подключив папку ```/data``` из текущей рабочей директории на хостовой машине в ```/data``` контейнера;
+```
+docker run -it -v "/home/kdr/Learn/data1:/data1" --name centos-test centos
+```
 - Запустите второй контейнер из образа ***debian*** в фоновом режиме, подключив папку ```/data``` из текущей рабочей директории на хостовой машине в ```/data``` контейнера;
+```
+docker run -it -v "/home/kdr/Learn/data1:/data1" --name debian-test debian
+```
 - Подключитесь к первому контейнеру с помощью ```docker exec``` и создайте текстовый файл любого содержания в ```/data```;
+```
+kdr@kashapovdr:~/Learn$ docker exec -it centos-test bash
+[root@e7ce9b33d05f /]# ls
+bin  data1  dev  etc  home  lib  lib64	lost+found  media  mnt	opt  proc  root  run  sbin  srv  sys  tmp  usr	var
+[root@e7ce9b33d05f /]# cd /data1/
+[root@e7ce9b33d05f data1]# echo "hi" > hi.txt
+[root@e7ce9b33d05f data1]# ls
+fili-from-centos.txt  hi.txt  test1.txt
+[root@e7ce9b33d05f data1]# cat hi.txt 
+hi
+[root@e7ce9b33d05f data1]# 
+```
 - Добавьте еще один файл в папку ```/data``` на хостовой машине;
 - Подключитесь во второй контейнер и отобразите листинг и содержание файлов в ```/data``` контейнера.
-
+```
+kdr@kashapovdr:~/Learn$ docker exec -it debian-test bash
+root@9a152b2d364a:/# ls
+bin  boot  data1  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run	sbin  srv  sys	tmp  usr  var
+root@9a152b2d364a:/# cd data1/
+root@9a152b2d364a:/data1# ls
+fili-from-centos.txt  hi.txt  test1.txt
+root@9a152b2d364a:/data1# cat hi.txt 
+hi
+root@9a152b2d364a:/data1#
+```
 ## Задача 4 (*)
 
 Воспроизвести практическую часть лекции самостоятельно.
