@@ -52,7 +52,7 @@ docker commit dkash-nginx dkash/dkash-nginx //Собираем образ из �
 docker login
 docker push dkash/docker-nginx  //Заливаем наш образ на хаб
 
-ссылка https://hub.docker.com/r/dkash/docker-nginx
+
 
 //проверяем что образ скачивается и работает:
 docker pull dkash/docker-nginx
@@ -60,6 +60,7 @@ docker images
 docker run -d -p 80:80 dkash/docker-nginx
 docker ps -a
 ```
+ссылка https://hub.docker.com/r/dkash/docker-nginx
 ## Задача 2
 
 Посмотрите на сценарий ниже и ответьте на вопрос:
