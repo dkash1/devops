@@ -9,7 +9,7 @@
 
 ![Screenshot](img/d-compose-z1.jpg)
 
-## Задача 2
+
 
 Создать вашу первую виртуальную машину в Яндекс.Облаке.
 
@@ -19,6 +19,10 @@
 <p align="center">
   <img width="1200" height="600" src="./assets/yc_01.png">
 </p>
+
+## Решение:
+
+![Screenshot](img/terraform-scr1.jpg)
 
 ## Задача 3
 
