@@ -22,7 +22,7 @@
 
 ## Решение:
 
-![Screenshot](img/terraform-scr1.jpg)
+![Screenshot](img/terraform-z2.jpg)
 
 ## Задача 3
 
@@ -33,6 +33,10 @@
 <p align="center">
   <img width="1200" height="600" src="./assets/yc_02.png">
 </p>
+
+## Решение:
+
+![Screenshot](img/grafana-z3.jpg)
 
 ## Задача 4 (*)
 
