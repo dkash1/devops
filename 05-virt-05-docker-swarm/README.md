@@ -29,7 +29,7 @@ docker node ls
 </details>
 
 ## Решение:
-![Screenshot](img/d-compose-z1.jpg)
+![Screenshot](img/node.jpg)
 
 ## Задача 3
 
@@ -44,7 +44,7 @@ docker service ls
 </details>
 
 ## Решение:
-![Screenshot](img/d-compose-z1.jpg)
+![Screenshot](img/service.jpg)
 
 ## Задача 4 (*)
 
