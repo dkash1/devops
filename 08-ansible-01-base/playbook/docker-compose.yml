@@ -1,8 +1,13 @@
 version: '3.9'
 
 services:
+  centos7:
+    container_name: centos7
+    image: centos:7
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
   ubuntu:
     container_name: ubuntu
     image: ubuntu
-    stdin_open: true # docker run -i
-    tty: true        # docker run -t
+    stdin_open: true 
+    tty: true       
